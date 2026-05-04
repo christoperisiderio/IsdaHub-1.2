@@ -287,9 +287,13 @@ app.patch("/api/alerts/:alertId/resolve", (req, res) => {
   res.json(a);
 });
 
-app.use(express.static(ROOT));
+app.use(express.static(path.join(ROOT, "public")));
 
 const PORT = Number(process.env.PORT) || 3001;
-app.listen(PORT, () => {
-  console.log(`IsdaHub PH serving http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`IsdaHub PH serving http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
