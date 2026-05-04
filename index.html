@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IsdaHub PH | Fair Catch. Fair Price. Fast Delivery.</title>
+    <meta
+      name="description"
+      content="IsdaHub PH connects fishermen, buyers, and coordinators in Agusan del Norte with cluster-based logistics, catch-to-market transparency, and fair pricing."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="landing-body">
+    <header class="landing-header">
+      <a href="#top" class="landing-brand">
+        <span class="brand-mark">🐟</span>
+        <span><strong>IsdaHub PH</strong><small>Digital seafood trade hub</small></span>
+      </a>
+      <button type="button" class="landing-nav-toggle" aria-expanded="false" aria-controls="landing-nav" aria-label="Menu">☰</button>
+      <nav class="landing-nav" id="landing-nav">
+        <a href="#roles">Choose role</a>
+        <a href="#features">Features</a>
+        <a href="#clusters" id="clusters">Coverage</a>
+        <a href="./coordinator.html" class="nav-cta">Coordinator</a>
+      </nav>
+    </header>
+
+    <main id="top" class="landing-main">
+      <section class="hero-landing">
+        <div class="hero-copy">
+          <p class="eyebrow">Agusan del Norte · BFAR-aligned clusters</p>
+          <h1>Fair Catch. Fair Price. Fast Delivery.</h1>
+          <p class="lede">
+            IsdaHub PH is a digital seafood trade hub that connects <strong>fishermen</strong>, <strong>buyers</strong>, and
+            <strong>platform coordinators</strong> with transparent pricing, catch-to-market tracking, and human-assisted logistics.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#roles">Enter the hub</a>
+            <a class="btn btn-outline btn-lg" href="#features">See how it works</a>
+          </div>
+          <p class="api-hint" id="api-hint">Checking live API…</p>
+        </div>
+        <div class="hero-cards" aria-hidden="true">
+          <div class="float-card f1"><span>🎣</span><small>Fishermen list catch</small></div>
+          <div class="float-card f2"><span>🛒</span><small>Buyers browse by cluster</small></div>
+          <div class="float-card f3"><span>🛵</span><small>Coordinators match riders</small></div>
+        </div>
+      </section>
+
+      <section class="roles-section" id="roles">
+        <h2>Choose your workspace</h2>
+        <p class="section-sub">As in the platform brief, users pick a role to access the right tools — web today, SMS-friendly listings for fishermen.</p>
+        <div class="role-cards">
+          <a class="role-card" href="./farmer.html">
+            <span class="role-icon">🎣</span>
+            <h3>Fisherman</h3>
+            <p>List species, quantity, and freshness; get price suggestions; listings are verified before buyers see them.</p>
+            <span class="role-go">Open farmer dashboard →</span>
+          </a>
+          <a class="role-card" href="./buyer.html">
+            <span class="role-icon">🛒</span>
+            <h3>Buyer</h3>
+            <p>Browse verified supply by cluster, filter by type and freshness, see catch-to-market details, checkout with delivery or pickup.</p>
+            <span class="role-go">Open buyer marketplace →</span>
+          </a>
+          <a class="role-card accent" href="./coordinator.html">
+            <span class="role-icon">📋</span>
+            <h3>Coordinator</h3>
+            <p>Central office: monitor orders, alerts, ongoing deliveries, daily price guidance, and cluster-based rider coordination.</p>
+            <span class="role-go">Open coordinator console →</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="features-section" id="features">
+        <h2>System features (from your brief)</h2>
+        <div class="feature-grid">
+          <article>
+            <h4>Catch-to-market tracking</h4>
+            <p>Catch time, source location, and estimated handoff help buyers judge freshness without map-based routing.</p>
+          </article>
+          <article>
+            <h4>SMS-based listing path</h4>
+            <p>Fishermen can post catch through a simple SMS-style flow in the demo API, supporting low-connectivity access.</p>
+          </article>
+          <article>
+            <h4>Cluster logistics</h4>
+            <p>Primary hubs (Carmen, Nasipit, Buenavista), secondary areas, supplementary Magallanes, and freshwater Jabonga.</p>
+          </article>
+          <article>
+            <h4>Fair pricing</h4>
+            <p>Daily price guidance from local market bands; coordinators verify listings before they go live to buyers.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="clusters-section" id="clusters">
+        <h2>Coverage area</h2>
+        <ul class="cluster-chips" id="cluster-chips"></ul>
+        <p class="section-sub">Each cluster acts as supply and demand, prioritizing local matches before nearby clusters — per your operations model.</p>
+      </section>
+    </main>
+
+    <footer class="landing-footer">
+      <p><strong>IsdaHub PH</strong> — empowering fishermen with equitable market access.</p>
+      <p class="muted">Run <code>npm start</code> to serve the API and static pages on port 3000.</p>
+    </footer>
+
+    <script src="./landing.js"></script>
+  </body>
+</html>

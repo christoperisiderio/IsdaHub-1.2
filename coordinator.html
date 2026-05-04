@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinator | IsdaHub PH</title>
+    <meta name="description" content="Platform coordinator dashboard — orders, riders, clusters, and price guidance for IsdaHub PH." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="dashboard-shell" id="home">
+      <aside class="sidebar" id="sidebar">
+        <a href="./index.html" class="brand">
+          <span class="brand-mark">🐟</span>
+          <span class="brand-text"><strong>IsdaHub PH</strong><small>Coordinator System</small></span>
+        </a>
+        <nav class="sidebar-nav">
+          <a href="#dashboard" class="active"><span>🏠</span>Dashboard</a>
+          <a href="#new-orders"><span>📦</span>Orders</a>
+          <a href="#ongoing"><span>🛵</span>Riders</a>
+          <a href="#price-guide"><span>🏷️</span>Price Guide</a>
+          <a href="#messages"><span>💬</span>Messages</a>
+          <div class="nav-divider"></div>
+          <a href="./farmer.html"><span>🎣</span>Farmer app</a>
+          <a href="./buyer.html"><span>🛒</span>Buyer app</a>
+          <div class="nav-divider"></div>
+          <a href="#settings"><span>⚙️</span>Settings</a>
+        </nav>
+        <div class="help-box">
+          <strong>Need Help?</strong>
+          <a href="./index.html#roles">Role overview</a>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar" id="dashboard">
+          <button class="nav-toggle" aria-label="Toggle sidebar">☰</button>
+          <div class="top-copy">
+            <h1>Good morning, Coordinator!</h1>
+            <p>Here&apos;s what&apos;s happening today.</p>
+          </div>
+          <div class="top-meta" id="settings">
+            <span class="meta-pill" id="coord-date">📅 —</span>
+            <span class="meta-pill" id="coord-time">🕙 —</span>
+            <div class="user-chip">
+              <span class="avatar">CO</span>
+              <div>
+                <strong>Main Office</strong>
+                <small>Coordinator</small>
+              </div>
+              <span class="caret">▾</span>
+            </div>
+          </div>
+        </header>
+
+        <section id="hero" class="cards-top">
+          <article class="metric-card blue">
+            <div class="metric-head"><span class="metric-icon">🛒</span><span>NEW ORDERS</span></div>
+            <strong id="metric-new-orders">—</strong>
+            <a href="#new-orders">View all orders</a>
+          </article>
+          <article class="metric-card green">
+            <div class="metric-head"><span class="metric-icon">🛵</span><span>ONGOING DELIVERIES</span></div>
+            <strong id="metric-ongoing">—</strong>
+            <a href="#ongoing">View all deliveries</a>
+          </article>
+          <article class="metric-card orange">
+            <div class="metric-head"><span class="metric-icon">⚠️</span><span>ALERTS</span></div>
+            <strong id="metric-alerts">—</strong>
+            <a href="#alerts">View all alerts</a>
+          </article>
+        </section>
+
+        <section class="dashboard-main">
+          <div class="center-column">
+            <article class="panel table-panel" id="pending-listings">
+              <div class="panel-title"><h3>Pending fisherman listings</h3><button type="button" class="linklike" id="reload-pending">Refresh</button></div>
+              <p class="muted-block">Verify before listings appear to buyers (per platform rules).</p>
+              <div class="table-like">
+                <div class="thead pending-head">
+                  <span>Fisher</span><span>Species</span><span>kg</span><span>Cluster</span><span>Channel</span><span>Action</span>
+                </div>
+                <div id="pending-listings-body"></div>
+              </div>
+            </article>
+
+            <div class="split-panels">
+              <article class="panel table-panel" id="new-orders">
+                <div class="panel-title"><h3>A. New Orders</h3><a href="#new-orders">Refresh</a></div>
+                <div class="table-like">
+                  <div class="thead new-orders-head">
+                    <span>Order ID</span><span>Buyer</span><span>Items (Grouped by Fisherman)</span><span>Cluster</span><span>Action</span>
+                  </div>
+                  <div id="new-orders-body"></div>
+                </div>
+              </article>
+
+              <article class="panel stack-panel" id="alerts">
+                <div class="panel-title"><h3>C. Alerts</h3><a href="#alerts" id="alerts-refresh">View all</a></div>
+                <div id="alerts-body"></div>
+              </article>
+            </div>
+
+            <div class="split-panels">
+              <article class="panel table-panel" id="ongoing">
+                <div class="panel-title"><h3>B. Ongoing Deliveries</h3><a href="#ongoing">Refresh</a></div>
+                <div class="table-like">
+                  <div class="thead delivery-head">
+                    <span>Order ID</span><span>Fisherman</span><span>Rider</span><span>Cluster</span><span>Status</span><span>Last Update</span><span>Action</span>
+                  </div>
+                  <div id="deliveries-body"></div>
+                </div>
+              </article>
+
+              <article class="panel" id="price-guide">
+                <div class="panel-title"><h3>Price Guide (Today)</h3><button type="button" class="linklike" id="save-price-guide">Save</button></div>
+                <ul class="price-list" id="price-guide-list"></ul>
+                <p class="updated" id="price-guide-updated">Synced from API</p>
+              </article>
+            </div>
+            <article class="panel quick-actions" id="messages">
+              <h3>Quick Actions</h3>
+              <div class="actions-grid">
+                <button type="button" class="action-btn a1" id="qa-add-fisher">👤 Add Fisherman</button>
+                <button type="button" class="action-btn a2" id="qa-find-rider">🛵 Find Rider</button>
+                <button type="button" class="action-btn a3" id="qa-send-msg">💬 Send Message</button>
+                <button type="button" class="action-btn a4" id="qa-broadcast">📢 Broadcast</button>
+              </div>
+            </article>
+          </div>
+
+          <aside class="right-column">
+            <article class="panel guide-panel" id="guide">
+              <div class="guide-head">Tutorial / Guide</div>
+              <button type="button" class="close-guide" aria-label="Close guide">✕</button>
+              <h3>Follow these simple steps:</h3>
+              <div class="guide-step s1">
+                <span>1</span>
+                <div>
+                  <strong>Process Orders</strong>
+                  <p>Click &quot;Process Order&quot; on a new order to review grouped items per fisherman.</p>
+                </div>
+              </div>
+              <div class="guide-step s2">
+                <span>2</span>
+                <div>
+                  <strong>Find Rider</strong>
+                  <p>Assign an on-call rider in the same BFAR cluster; fallback to nearby clusters if needed.</p>
+                </div>
+              </div>
+              <div class="guide-step s3">
+                <span>3</span>
+                <div>
+                  <strong>Update Status</strong>
+                  <p>After rider accepts, update delivery status in ongoing deliveries.</p>
+                </div>
+              </div>
+              <p class="tip"><strong>Tip:</strong> Prioritize same-cluster riders for faster turnaround.</p>
+              <a class="btn btn-soft" href="./index.html#clusters">Cluster map (list)</a>
+            </article>
+          </aside>
+        </section>
+      </main>
+    </div>
+    <script src="./coordinator.js"></script>
+  </body>
+</html>

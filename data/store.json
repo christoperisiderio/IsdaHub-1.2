@@ -1,0 +1,271 @@
+{
+  "priceGuide": [
+    {
+      "species": "Tuna",
+      "minPerKg": 180,
+      "maxPerKg": 200
+    },
+    {
+      "species": "Bangus",
+      "minPerKg": 110,
+      "maxPerKg": 130
+    },
+    {
+      "species": "Tilapia",
+      "minPerKg": 90,
+      "maxPerKg": 110
+    },
+    {
+      "species": "Galunggong",
+      "minPerKg": 80,
+      "maxPerKg": 100
+    }
+  ],
+  "clusters": [
+    {
+      "id": "carmen",
+      "name": "Carmen",
+      "tier": "Primary Supply Hub"
+    },
+    {
+      "id": "nasipit",
+      "name": "Nasipit",
+      "tier": "Primary Supply Hub"
+    },
+    {
+      "id": "buenavista",
+      "name": "Buenavista",
+      "tier": "Primary Supply Hub"
+    },
+    {
+      "id": "kitcharao",
+      "name": "Kitcharao",
+      "tier": "Secondary Supply Area"
+    },
+    {
+      "id": "santiago",
+      "name": "Santiago",
+      "tier": "Secondary Supply Area"
+    },
+    {
+      "id": "tubay",
+      "name": "Tubay",
+      "tier": "Secondary Supply Area"
+    },
+    {
+      "id": "magallanes",
+      "name": "Magallanes",
+      "tier": "Supplementary Area"
+    },
+    {
+      "id": "jabonga",
+      "name": "Jabonga",
+      "tier": "Freshwater Source"
+    }
+  ],
+  "listings": [
+    {
+      "id": "lst_1",
+      "farmerName": "Juan Dela Cruz",
+      "farmerPhone": "+639171234567",
+      "species": "Tuna",
+      "kg": 12,
+      "freshness": "Day catch",
+      "cluster": "carmen",
+      "pricePerKg": 190,
+      "catchTime": "2026-05-04T04:30:00.000Z",
+      "sourceLocation": "Carmen municipal fish port",
+      "status": "verified",
+      "channel": "app",
+      "createdAt": "2026-05-04T02:00:00.000Z"
+    },
+    {
+      "id": "lst_2",
+      "farmerName": "Maria Santos",
+      "farmerPhone": "+639189998877",
+      "species": "Bangus",
+      "kg": 25,
+      "freshness": "Iced same day",
+      "cluster": "nasipit",
+      "pricePerKg": 120,
+      "catchTime": "2026-05-04T03:00:00.000Z",
+      "sourceLocation": "Nasipit landing",
+      "status": "verified",
+      "channel": "app",
+      "createdAt": "2026-05-04T02:30:00.000Z"
+    },
+    {
+      "id": "lst_3",
+      "farmerName": "Pedro Reyes",
+      "farmerPhone": "+639155500011",
+      "species": "Tilapia",
+      "kg": 8,
+      "freshness": "Live to chilled",
+      "cluster": "jabonga",
+      "pricePerKg": 100,
+      "catchTime": "2026-05-04T01:00:00.000Z",
+      "sourceLocation": "Jabonga aquaculture",
+      "status": "verified",
+      "channel": "sms",
+      "createdAt": "2026-05-04T01:45:00.000Z"
+    },
+    {
+      "id": "lst_moqq853uapkg",
+      "farmerName": "SMS Fisher",
+      "farmerPhone": "+69245380668",
+      "species": "Tuna",
+      "kg": 12,
+      "freshness": "Parsed from SMS",
+      "cluster": "carmen",
+      "pricePerKg": 190,
+      "catchTime": "2026-05-04T04:55:56.634Z",
+      "sourceLocation": "SMS intake",
+      "status": "verified",
+      "channel": "sms",
+      "createdAt": "2026-05-04T04:55:56.634Z",
+      "smsRaw": "TUNA 12KG"
+    },
+    {
+      "id": "lst_moqq8a3arddi",
+      "farmerName": "SMS Fisher",
+      "farmerPhone": "+69245380668",
+      "species": "Tuna",
+      "kg": 12,
+      "freshness": "Parsed from SMS",
+      "cluster": "carmen",
+      "pricePerKg": 190,
+      "catchTime": "2026-05-04T04:56:03.094Z",
+      "sourceLocation": "SMS intake",
+      "status": "verified",
+      "channel": "sms",
+      "createdAt": "2026-05-04T04:56:03.094Z",
+      "smsRaw": "TUNA 12KG"
+    },
+    {
+      "id": "lst_moqq8odjpsnx",
+      "farmerName": "SMS Fisher",
+      "farmerPhone": "+69245380668",
+      "species": "Tuna",
+      "kg": 12,
+      "freshness": "Parsed from SMS",
+      "cluster": "carmen",
+      "pricePerKg": 190,
+      "catchTime": "2026-05-04T04:56:21.607Z",
+      "sourceLocation": "SMS intake",
+      "status": "verified",
+      "channel": "sms",
+      "createdAt": "2026-05-04T04:56:21.607Z",
+      "smsRaw": "TUNA 12KG"
+    },
+    {
+      "id": "lst_moqq8qd5hkxe",
+      "farmerName": "SMS Fisher",
+      "farmerPhone": "+69245380668",
+      "species": "Tuna",
+      "kg": 12,
+      "freshness": "Parsed from SMS",
+      "cluster": "carmen",
+      "pricePerKg": 190,
+      "catchTime": "2026-05-04T04:56:24.185Z",
+      "sourceLocation": "SMS intake",
+      "status": "verified",
+      "channel": "sms",
+      "createdAt": "2026-05-04T04:56:24.185Z",
+      "smsRaw": "TUNA 12KG"
+    },
+    {
+      "id": "lst_moqq8qr6werf",
+      "farmerName": "SMS Fisher",
+      "farmerPhone": "+69245380668",
+      "species": "Tuna",
+      "kg": 12,
+      "freshness": "Parsed from SMS",
+      "cluster": "carmen",
+      "pricePerKg": 190,
+      "catchTime": "2026-05-04T04:56:24.690Z",
+      "sourceLocation": "SMS intake",
+      "status": "verified",
+      "channel": "sms",
+      "createdAt": "2026-05-04T04:56:24.690Z",
+      "smsRaw": "TUNA 12KG"
+    },
+    {
+      "id": "lst_moqqbbnfm2mp",
+      "farmerName": "Maria Santos",
+      "farmerPhone": "+69245380668",
+      "species": "Tuna",
+      "kg": 123,
+      "freshness": "Iced same day",
+      "cluster": "carmen",
+      "pricePerKg": 190,
+      "catchTime": "2025-05-04T03:00:00.000Z",
+      "sourceLocation": "sd",
+      "status": "verified",
+      "channel": "app",
+      "createdAt": "2026-05-04T04:58:25.083Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-260504-001",
+      "buyerName": "Juan Dela Cruz",
+      "cluster": "carmen",
+      "deliveryMode": "delivery",
+      "status": "new",
+      "createdAt": "2026-05-04T08:10:00.000Z",
+      "lines": [
+        {
+          "listingId": "lst_1",
+          "farmerName": "Juan Dela Cruz",
+          "species": "Tuna",
+          "kg": 5
+        }
+      ]
+    },
+    {
+      "id": "ORD-260504-002",
+      "buyerName": "Ana Reyes",
+      "cluster": "nasipit",
+      "deliveryMode": "pickup",
+      "status": "new",
+      "createdAt": "2026-05-04T08:20:00.000Z",
+      "lines": [
+        {
+          "listingId": "lst_2",
+          "farmerName": "Maria Santos",
+          "species": "Bangus",
+          "kg": 3
+        }
+      ]
+    }
+  ],
+  "deliveries": [
+    {
+      "id": "OR-260504-001",
+      "orderId": "ORD-260504-001",
+      "farmerName": "Juan Dela Cruz",
+      "riderName": "Carlo M.",
+      "cluster": "carmen",
+      "status": "picked_up",
+      "updatedAt": "2026-05-04T09:15:00.000Z"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alt_1",
+      "type": "rider",
+      "message": "No rider available in Nasipit",
+      "detail": "Order ORD-260504-002",
+      "createdAt": "2026-05-04T10:29:00.000Z",
+      "resolved": true
+    },
+    {
+      "id": "alt_2",
+      "type": "delay",
+      "message": "Delivery delayed",
+      "detail": "Order ORD-260504-001",
+      "createdAt": "2026-05-04T10:22:00.000Z",
+      "resolved": false
+    }
+  ]
+}

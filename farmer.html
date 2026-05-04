@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fisherman | IsdaHub PH</title>
+    <meta name="description" content="List catch, follow price guidance, and track verification for IsdaHub PH." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="dashboard-shell farmer-shell" id="home">
+      <aside class="sidebar" id="sidebar">
+        <a href="./index.html" class="brand">
+          <span class="brand-mark">🎣</span>
+          <span class="brand-text"><strong>IsdaHub PH</strong><small>Fisherman workspace</small></span>
+        </a>
+        <nav class="sidebar-nav">
+          <a href="#dashboard" class="active"><span>🏠</span>Overview</a>
+          <a href="#listings"><span>📋</span>My listings</a>
+          <a href="#new-listing"><span>➕</span>New listing</a>
+          <a href="#sms"><span>📱</span>SMS path</a>
+          <a href="#prices"><span>🏷️</span>Price tips</a>
+          <div class="nav-divider"></div>
+          <a href="./buyer.html"><span>🛒</span>Buyer view</a>
+          <a href="./coordinator.html"><span>📋</span>Coordinator</a>
+        </nav>
+        <div class="help-box">
+          <strong>Listings</strong>
+          <span class="muted-small">Coordinator verifies before buyers see your stock.</span>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar" id="dashboard">
+          <button type="button" class="nav-toggle" aria-label="Toggle sidebar">☰</button>
+          <div class="top-copy">
+            <h1 id="farmer-greeting">Magandang umaga!</h1>
+            <p>Your cluster supply and verification status (live from API).</p>
+          </div>
+          <div class="top-meta">
+            <span class="meta-pill" id="farmer-cluster-pill">Cluster: —</span>
+            <div class="user-chip">
+              <span class="avatar" id="farmer-avatar">🎣</span>
+              <div>
+                <strong id="farmer-display-name">Fisher</strong>
+                <small>Fisherman</small>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section class="cards-top farmer-metrics">
+          <article class="metric-card blue">
+            <div class="metric-head"><span class="metric-icon">📋</span><span>ACTIVE LISTINGS</span></div>
+            <strong id="m-active">—</strong>
+            <a href="#listings">View listings</a>
+          </article>
+          <article class="metric-card orange">
+            <div class="metric-head"><span class="metric-icon">⏳</span><span>PENDING VERIFY</span></div>
+            <strong id="m-pending">—</strong>
+            <a href="#listings">Awaiting office</a>
+          </article>
+          <article class="metric-card green">
+            <div class="metric-head"><span class="metric-icon">✓</span><span>LIVE TO BUYERS</span></div>
+            <strong id="m-verified">—</strong>
+            <a href="#listings">Verified rows</a>
+          </article>
+        </section>
+
+        <section class="farmer-grid">
+          <article class="panel" id="new-listing">
+            <div class="panel-title"><h3>New catch listing</h3><span class="pill-soft">App channel</span></div>
+            <form class="stack-form" id="form-listing">
+              <label>Your name<input name="farmerName" required placeholder="e.g. Juan Dela Cruz" /></label>
+              <label>Mobile (optional)<input name="farmerPhone" placeholder="+639xxxxxxxxx" /></label>
+              <label>BFAR cluster<select name="cluster" id="farmer-cluster-select" required></select></label>
+              <label>Species<input name="species" list="species-list" required placeholder="Tuna, Bangus…" /></label>
+              <datalist id="species-list"></datalist>
+              <label>Quantity (kg)<input name="kg" type="number" step="0.1" min="0.1" required /></label>
+              <label>Freshness<select name="freshness">
+                  <option>Day catch</option>
+                  <option>Iced same day</option>
+                  <option>Live to chilled</option>
+                </select></label>
+              <label>Catch time<input name="catchTime" type="datetime-local" /></label>
+              <label>Source / landing<input name="sourceLocation" placeholder="Port or barangay landing" /></label>
+              <label>Your price (₱/kg)<input name="pricePerKg" type="number" min="1" step="1" required /><small class="field-hint" id="price-hint"></small></label>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Submit for verification</button>
+                <button type="button" class="btn btn-soft" id="btn-suggest-price">Apply suggested midpoint</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="panel" id="prices">
+            <div class="panel-title"><h3>Today&apos;s price bands</h3><a href="./coordinator.html#price-guide">Office guide</a></div>
+            <ul class="price-list" id="farmer-price-list"></ul>
+            <p class="updated">Use these bands to stay competitive; coordinators may adjust before publish.</p>
+          </article>
+        </section>
+
+        <article class="panel table-panel" id="listings">
+          <div class="panel-title"><h3>My listings</h3><button type="button" class="linklike" id="reload-listings">Refresh</button></div>
+          <div class="table-like wide-table">
+            <div class="thead farmer-list-head">
+              <span>Species</span><span>kg</span><span>₱/kg</span><span>Cluster</span><span>Freshness</span><span>Status</span><span>Tracking</span>
+            </div>
+            <div id="farmer-listings-body"></div>
+          </div>
+        </article>
+
+        <article class="panel" id="sms">
+          <div class="panel-title"><h3>SMS-style listing (demo)</h3><span class="pill-soft">No smartphone required in full rollout</span></div>
+          <p class="muted-block">Send a plain message like <kbd>TUNA 12kg nasipit</kbd> — the demo parses species, kg, and optional cluster keyword.</p>
+          <form class="stack-form sms-form" id="form-sms">
+            <label>Message<textarea name="text" rows="2" required placeholder="TUNA 12kg carmen"></textarea></label>
+            <div class="two-col">
+              <label>Name<input name="farmerName" value="SMS Fisher" /></label>
+              <label>Phone<input name="farmerPhone" value="+639000000000" /></label>
+            </div>
+            <label>Default cluster<select name="cluster" id="sms-cluster-select"></select></label>
+            <button type="submit" class="btn btn-primary">Simulate SMS intake</button>
+            <pre class="mono-out" id="sms-result" hidden></pre>
+          </form>
+        </article>
+      </main>
+    </div>
+    <script src="./farmer.js"></script>
+  </body>
+</html>
