@@ -45,14 +45,14 @@ button { font-family: inherit; }
   padding: 0.1rem 0.25rem 1rem;
 }
 .brand-mark {
-  width: 2.3rem;
-  height: 2.3rem;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  background: linear-gradient(135deg, var(--primary), #0fa6bb);
-  font-size: 1.05rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  object-fit: contain;
+  border-radius: 0.6rem;
+  background: #fff;
+  padding: 0.15rem;
+  box-shadow: 0 4px 14px rgba(15, 50, 78, 0.16);
+  flex-shrink: 0;
 }
 .brand-text strong {
   display: block;

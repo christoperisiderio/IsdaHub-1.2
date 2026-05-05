@@ -287,6 +287,7 @@ app.patch("/api/alerts/:alertId/resolve", (req, res) => {
   res.json(a);
 });
 
+app.use("/assets", express.static(path.join(ROOT, "assets")));
 app.use(express.static(path.join(ROOT, "public")));
 
 const PORT = Number(process.env.PORT) || 3001;
